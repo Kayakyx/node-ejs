@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ejs test</title>
+    <style>
+        h2 {
+            background: darkmagenta;
+        }
+    </style>
+</head>
+<body>
+    <h2><%= title %></h2>
+    <% if (isLogin) { %>
+        <div>Hi,<%= name %> 你登录了</div>
+    <% } else { %>
+        <div>请先登录</div>
+        <a href="http://localhost:3000/login">登录</a>
+    <% } %>
+    <h3>今日趣闻</h3>
+    <div>
+        <ul>
+            <% for (var i = 0; i < list.length; i++) { %>
+                <li><%= list[i] %></li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>
