@@ -1,0 +1,11 @@
+<div>
+    <div> this is detail compontent </div>
+    <script>
+        $(function (){
+            console.log('this is detail js');
+            $.get('http://localhost:3000/getDetail', function (res){
+                console.log('response', res);
+            });
+        });
+    </script>
+</div>

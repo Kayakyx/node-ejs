@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>spa-demo 主页</title>
+    <style>
+        .content {
+            display: flex;
+        }
+        .container {
+            padding: 20px;
+        }
+    </style>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function (){
+            $('#btn1').click(function (){
+                console.log('bnt1')
+                // $('.box').html('dashbord');
+                $('.box').load('./compontents/dashbord.html');
+            });
+            $('#btn2').click(function (){
+                console.log('bnt1')
+                // $('.box').html('list');
+                $('.box').load('./compontents/list.html');
+            });
+            $('#btn3').click(function (){
+                console.log('bnt2')
+                // $('.box').html('detail');
+                $('.box').load('./compontents/detail.html');
+            });
+
+            function init(){
+                $('#btn1').click();
+            }
+            init();
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <header>header</header>
+        <main class="content">
+            <aside class="menu">
+                <ul>
+                    <li><button id="btn1">去看板</button></li>
+                    <li><button id="btn2">去列表</button></li>
+                    <li><button id="btn3">去详情</button></li>
+                </ul>
+            </aside>
+            <aside class="container box"></aside>
+        </main>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

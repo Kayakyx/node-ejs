@@ -13,6 +13,12 @@
     <h2><%= title %></h2>
     <% if (isLogin) { %>
         <div>Hi,<%= name %> 你登录了</div>
+        <div>
+            <%= userHtml %>
+        </div>
+        <div>
+            <%- userHtml %>
+        </div>
     <% } else { %>
         <div>请先登录</div>
         <a href="http://localhost:3000/login">登录</a>
@@ -25,5 +31,12 @@
             <% } %>
         </ul>
     </div>
+    <%# 这里是注释 %>
+    <%- include('components/chart.html') -%>
+
+    <% if (isLogin) { %>
+        <%- include('./components/part.ejs', {content: detail.content}); -%>
+    <% } %>
+
 </body>
 </html>
